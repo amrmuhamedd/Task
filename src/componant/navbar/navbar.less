@@ -1,0 +1,79 @@
+@import '../../less/variable.less';
+.navbar {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    box-shadow: 0 3px 6px rgba(79,43,121,.37);
+    background-color: white;
+    z-index: 100;
+    .navbar-brand {
+      margin-right: auto;
+      padding: 10px;
+      z-index: 9999;
+    }
+    .menu {
+        padding: 10px;
+        margin-left: auto;
+        display: flex;
+        transition: all .7s ease-in-out;
+        z-index: 100;
+        a {
+            display : inline-block;
+            margin : auto 10px;
+            color: #000;
+            &:hover {
+                color:@main-color;
+            }
+        }
+        .button {
+            height: auto !important;
+            padding : 10px;
+            text-align: center;
+            border-radius: 15px;
+            color: white;
+        }
+        .sign-in{
+            background-color: @main-color;
+            .button();
+        }
+        .book-now{
+            background-color: @secondary-color;
+            .button();
+        }
+        @media (max-width : 992px){
+            top: -310px;
+            display: block;
+            position: absolute;
+            background-color: white;
+            text-align: center;
+            width: 100%;
+            a{
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    }
+    .show {
+        top: 79px !important;
+    }
+    .toggler {
+        display: none;
+        @media (max-width : 992px){
+            display: block;
+            margin: 10px;
+            margin-left: auto;
+            border: none;
+            background-color: transparent;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 9999;
+            outline: none;
+            &:active {
+                outline: none;
+            }
+        }
+    }
+}
